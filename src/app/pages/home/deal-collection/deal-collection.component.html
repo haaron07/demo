@@ -1,0 +1,53 @@
+<div class="bg-light deal-container pt-7 pb-7 mb-4">
+    <div class="container">
+        <div class="heading text-center mb-4" contentAnim aniName="blurIn">
+            <h2 class="title">Deals & Outlet</h2>
+            <p class="title-desc">Today’s deal and more</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 deal-col" contentAnim aniName="fadeInRightShorter">
+                <div class="deal" style="background-image: url('assets/images/home/deal/bg-1.jpg')">
+                    <div class="deal-top">
+                        <h2>Deal of the Day.</h2>
+                        <h4>Limited quantities. </h4>
+                    </div>
+
+                    <div class="deal-content">
+                        <h3 class="product-title"><a routerLink="/product/default/brown-faux-fur-longline-coat">Brown faux fur longline coat</a></h3>
+
+                        <div class="product-price">
+                            <span class="new-price">$310.00</span>
+                            <span class="old-price">Was $190.00</span>
+                        </div>
+
+                        <a routerLink="/shop/sidebar/list" class="btn btn-link"><span>Shop Now</span><i class="icon-long-arrow-right"></i></a>
+                    </div>
+
+                    <div class="deal-bottom">
+                        <molla-count-down until="+10h" wrap="deal-countdown" format="HMS" [labelsShort]="true"></molla-count-down>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" contentAnim aniName="fadeInLeftShorter">
+                <div class="products">
+                    <div class="row" *ngIf="!loaded else elseBlock">
+                        <div class="col-6"><div class="skel-pro"></div></div>
+                        <div class="col-6"><div class="skel-pro"></div></div>
+                    </div>
+                    <ng-template #elseBlock>
+                        <div class="row">
+                            <div class="col-6" *ngFor="let product of products">
+                                <molla-product-twelve [product]="product" style="display: flex; align-items: stretch; width: 100%;"></molla-product-twelve>
+                            </div>
+                        </div>    
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+
+        <div class="more-container text-center mt-3 mb-0">
+            <a routerLink="/shop/sidebar/list" class="btn btn-outline-dark-2 btn-round btn-more"><span>Shop more Outlet deals</span><i class="icon-long-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
